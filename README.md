@@ -1,1 +1,0 @@
-# tomaszgieszczyk.github.io
