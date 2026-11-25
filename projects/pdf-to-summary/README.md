@@ -17,6 +17,6 @@ Select a document in the library to open its drawer. Switch between the summary,
 
 ## Source and setup
 
-The private source repository contains the Docker Compose quick start and configuration reference. [Open the source repository (access required)](https://github.com/tomaszgieszczyk/pdf-to-summary).
+The source repository contains the Docker Compose quick start and configuration reference. [Open the source repository](https://github.com/tomaszgieszczyk/pdf-to-summary).
 
 [Return to the portfolio](https://tomaszgieszczyk.github.io/#work)
