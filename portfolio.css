@@ -6,11 +6,16 @@
   --paper: #f6f7f2;
   --blue: #274b64;
   --lime: #d2ef8b;
+  --header-height: 5.4rem;
+  scroll-padding-top: var(--header-height);
   font: 100%/1.6 "DM Sans", "Segoe UI", sans-serif;
   color: var(--ink);
   background: var(--paper);
 }
 *,*::before,*::after {box-sizing:border-box}
+@media (prefers-reduced-motion: no-preference) {
+  :root {scroll-behavior:smooth}
+}
 body {margin:0}
 h1,h2,p,figure,ul,dl,dd {margin:0}
 a {color:inherit}
@@ -20,7 +25,16 @@ button {font:inherit}
 .skip:focus {top:1rem}
 .wrap {width:min(100% - clamp(2rem,9vw,10rem),84rem);margin-inline:auto}
 header,footer,nav,.identity,.section-label,.kicker,.preview-bar,figcaption,.views {display:flex;align-items:center}
-header {justify-content:space-between;min-height:5.4rem;border-bottom:1px solid var(--line);gap:1rem}
+header {
+  position:sticky;
+  top:0;
+  z-index:4;
+  background:var(--paper);
+  justify-content:space-between;
+  min-height:var(--header-height);
+  border-bottom:1px solid var(--line);
+  gap:1rem;
+}
 .identity,nav a,.cta {text-decoration:none}
 .identity {gap:.85rem;font-weight:600;font-size:.91rem;letter-spacing:.015em}
 .monogram {display:inline-block;color:white;background:var(--ink);font:bold 1.6rem/2.45rem "DM Sans",sans-serif;letter-spacing:-.1em;width:2.5rem;text-align:center;border-radius:.35rem}
@@ -70,6 +84,7 @@ details dl div+div {margin-top:.75rem}
 dt {font-weight:650}
 dd {color:var(--quiet)}
 .about h2 {margin-top:1rem;font-size:clamp(1.85rem,3.2vw,3rem)}
+.about {min-height:calc(100svh - var(--header-height) - 5rem);align-content:start}
 .text-link {display:inline-block;margin-top:1.05rem;text-underline-offset:.2em}
 footer {justify-content:space-between;padding:1.15rem 0 1.6rem;border-top:1px solid var(--line);font-size:.88rem;color:var(--quiet)}
 @media(max-width:760px) {
@@ -81,7 +96,7 @@ footer {justify-content:space-between;padding:1.15rem 0 1.6rem;border-top:1px so
 }
 @media(max-width:470px){
  .identity>span:last-child {display:none}
- header {min-height:4.1rem}
+ :root {--header-height:4.1rem}
  .paper-stage {padding:1.4rem 1.1rem}
  .preview-bar,figcaption {padding-inline:.85rem}
  .paper {padding:1.2rem;min-height:17.5rem}
